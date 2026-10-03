@@ -8,6 +8,7 @@ select = ["E", "F", "I", "UP"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 norecursedirs = ["lab04-ai-coding-ux"]
+pythonpath = ["."]
 
 [tool.coverage.run]
 omit = [
