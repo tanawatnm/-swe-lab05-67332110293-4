@@ -3,8 +3,8 @@
 **รหัสวิชา:** วิศวกรรมซอฟต์แวร์ในยุค AI (Software Engineering in AI Era)  
 **ชื่อ-นามสกุล:** นายธนวัฒน์ น้ำเง่า (Mr. Tanawat Namngao)  
 **รหัสนักศึกษา:** 67332110293-4  
-**GitHub Username:** [TanawatNamngao](https://github.com/TanawatNamngao)  
-**Repository:** [swe-inventory-67332110293-4](https://github.com/TanawatNamngao/swe-inventory-67332110293-4)
+**GitHub Username:** [tanawatnm](https://github.com/tanawatnm)  
+**Repository:** [swe-inventory-67332110293-4](https://github.com/tanawatnm/swe-inventory-67332110293-4)
 
 ---
 
