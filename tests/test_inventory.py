@@ -150,3 +150,48 @@ class TestSellEdgeCases:
 
         inv.sell("สินค้า A", 4)  # ขาย 4 ชิ้น = 400
         assert inv.get_total_value() == 1600.0
+
+
+class TestInventoryAdditionalCoverage:
+    """การทดสอบเพิ่มเติมสำหรับ InventoryItem, add_item ซ้ำ และ restock เพื่อความสมบูรณ์ของระบบ."""
+
+    def test_inventory_item_validation(self):
+        """ตรวจสอบความถูกต้องของข้อมูลสินค้าเริ่มต้น."""
+        with pytest.raises(ValueError, match="ชื่อสินค้าต้องไม่ว่างเปล่า"):
+            Inventory().add_item("", 5, 10.0)
+
+        with pytest.raises(ValueError, match="จำนวนสินค้าต้องไม่ติดลบ"):
+            Inventory().add_item("ของติดลบ", -1, 10.0)
+
+        with pytest.raises(ValueError, match="ราคาต้องมากกว่าศูนย์"):
+            Inventory().add_item("ของฟรี", 5, 0.0)
+
+    def test_add_duplicate_item_raises_value_error(self):
+        """การเพิ่มสินค้าชื่อซ้ำต้อง raise ValueError."""
+        inv = Inventory()
+        inv.add_item("ปากกา", 5, 10.0)
+        with pytest.raises(ValueError, match="สินค้า 'ปากกา' มีอยู่ในระบบแล้ว"):
+            inv.add_item("ปากกา", 10, 10.0)
+
+    def test_restock_success(self):
+        """การเติมสต็อกสินค้าที่สำเร็จ."""
+        inv = Inventory()
+        inv.add_item("สมุด", 5, 20.0)
+        new_qty = inv.restock("สมุด", 10)
+        assert new_qty == 15
+        assert inv._items["สมุด"].quantity == 15
+
+    def test_restock_non_existent_item_raises_key_error(self):
+        """การเติมสต็อกสินค้าที่ไม่มีในระบบ."""
+        inv = Inventory()
+        with pytest.raises(KeyError, match="ไม่พบสินค้า 'ดินสอ' ในระบบ"):
+            inv.restock("ดินสอ", 5)
+
+    def test_restock_invalid_amount_raises_value_error(self):
+        """การเติมสต็อกด้วยจำนวน <= 0 ต้อง raise ValueError."""
+        inv = Inventory()
+        inv.add_item("สมุด", 5, 20.0)
+        with pytest.raises(ValueError, match="จำนวนที่เติมต้องมากกว่าศูนย์"):
+            inv.restock("สมุด", 0)
+        with pytest.raises(ValueError, match="จำนวนที่เติมต้องมากกว่าศูนย์"):
+            inv.restock("สมุด", -5)
