@@ -1,53 +1,66 @@
-# SWE Inventory Management - Lab 04: AI-Assisted Coding & UX
+# SWE Inventory Management - Lab 05 & Lab 04
 
-**รหัสวิชา:** วิศวกรรมซอฟต์แวร์ในยุค AI (Software Engineering in AI Era)  
+**รายวิชา:** วิศวกรรมซอฟต์แวร์ในยุค AI (Software Engineering in AI Era)  
 **ชื่อ-นามสกุล:** นายธนวัฒน์ น้ำเง่า (Mr. Tanawat Namngao)  
 **รหัสนักศึกษา:** 67332110293-4  
 **GitHub Username:** [tanawatnm](https://github.com/tanawatnm)  
-**Repository:** [swe-inventory-67332110293-4](https://github.com/tanawatnm/swe-inventory-67332110293-4)
+**Repository:** [https://github.com/tanawatnm/-swe-lab05-67332110293-4](https://github.com/tanawatnm/-swe-lab05-67332110293-4)
 
 ---
 
-## 📌 สรุปงานส่ง Lab 04 (Checklist of Deliverables)
+## 📌 สรุปงานส่ง Lab 05: TDD, Refactor และ CI/CD (Checklist of Deliverables)
 
-งานทั้งหมดของ Lab 4 รวบรวมไว้ในโฟลเดอร์ `lab04-ai-coding-ux/` ตามข้อกำหนด:
+งานทุกข้อของ Lab 5 ได้รับการพัฒนาและตรวจสอบตามเกณฑ์ Rubric 100 คะแนนเต็ม:
 
-### ส่วนที่ 1: UX แบบย่อ และ UI Mockup (Sub-CLO 3.4, 3.5)
-- [x] [findings-lab04.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/findings-lab04.md) - บันทึกการสัมภาษณ์ผู้ใช้ สรุป Needs, Pain Points, Surprises และ Point of View (1 ประโยค) ที่ชี้เป้าไปยังหน้าจอที่ต้องแก้ไข
-- [x] [persona.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/persona.md) - Persona ตัวละคร "สมหมาย รักงาน" พร้อมระบุระดับทักษะเทคโนโลยี (2/5) และ Journey Map 5 ขั้นตอนระบุจุดสะดุดและแนวทางแก้ไข
-- [x] [assets/wireframe-ai.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/assets/wireframe-ai.md) - Text Wireframe (ASCII Layout) จาก AI รวม 3 หน้าจอ: Login, Dashboard, และ Add Product พร้อมคำอธิบาย Usability & Accessibility
-- [x] [assets/inventory-mockup.drawio](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/assets/inventory-mockup.drawio) - UI Mockup ฉบับสมบูรณ์สำหรับเปิดดูและแก้ไขใน draw.io / diagrams.net ตามชุดสี WCAG AA
-- [x] [assets/mockup-link.txt](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/assets/mockup-link.txt) - ลิงก์และคำอธิบายการเข้าถึงไฟล์ Mockup
-- [x] [accessibility-review.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/accessibility-review.md) - ผลการตรวจ Accessibility Checklist ตามเกณฑ์ WCAG 2.1 AA และระบุจุดที่ AI ออกแบบพลาด 3 จุดพร้อมวิธีแก้ไขด้วยตนเอง
-
-### ส่วนที่ 2: Prompt vs Context Engineering & Code Review (Sub-CLO 3.6)
-- [x] [prompt-vs-context.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/prompt-vs-context.md) - การทดลองเปรียบเทียบผลลัพธ์ระหว่าง Prompt ธรรมดากับ Prompt ที่มี Context ครบถ้วน (Invariants, Exceptions, Constraints, Tests)
-- [x] [code-review.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/code-review.md) - รายงาน Code Review ละเอียดครบ 4 องค์ประกอบ สำหรับ PR โมดูล `inventory_service.py`, ตารางสรุป 7 จุดบกพร่อง, การเปรียบเทียบกับ AI Reviewer และคำตอบแบบฝึกหัดส่งท้าย
-
-### ส่วนที่ 3: Evidence-Based Debugging (Sub-CLO 3.6)
-- [x] [debug-log.md](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/debug-log.md) - บันทึกการ Debug 5 ขั้นตอน (Reproduce, Traceback, Hypothesis, Confirmation, Fix & Re-run) สำหรับทุก Test ที่ไม่ผ่าน พร้อมการวิเคราะห์ Trap ใน `test_apply_discount_zero`
-- [x] [discount.py](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/discount.py) - โค้ดที่ได้รับการแก้ไข Root cause ครบถ้วน
-- [x] [tests/test_discount.py](file:///c:/Users/next5/Desktop/LAB4/lab04-ai-coding-ux/tests/test_discount.py) - ชุดทดสอบทางการ รันผ่านครบ 6/6 tests (100% PASSED)
+| # | รายการงานส่ง (Deliverables) | ไฟล์ที่เกี่ยวข้อง | คำอธิบายและผลลัพธ์ |
+|:-:|---|---|---|
+| 1 | **TDD ของ `low_stock_items`** | [tests/test_inventory.py](file:///c:/Users/next5/Desktop/LAB4/tests/test_inventory.py)<br>[inventory.py](file:///c:/Users/next5/Desktop/LAB4/inventory.py) | ดำเนินการตาม Red-Green-Refactor ครบ 6 กรณีทดสอบ (Threshold ขอบ, เท่ากับ, เรียงลำดับตัวอักษร, คลังว่าง, 0, ติดลบ) พร้อมประวัติ Commit แยกชัดเจน |
+| 2 | **การจับ Test Gap ของเมธอด `sell`** | [test-gap.md](file:///c:/Users/next5/Desktop/LAB4/test-gap.md)<br>[tests/test_inventory.py](file:///c:/Users/next5/Desktop/LAB4/tests/test_inventory.py) | ตารางเปรียบเทียบ 3 คอลัมน์ (กรณีที่ AI ให้มา, กรณีที่ขาด, Test ที่เขียนเสริม) ครอบคลุมค่าขอบ, ค่า 0/ติดลบ, สต็อกไม่พอ, สินค้าไม่มีจริง และความถูกต้องของมูลค่ารวม |
+| 3 | **บันทึกการวิเคราะห์ Coverage** | [coverage-note.md](file:///c:/Users/next5/Desktop/LAB4/coverage-note.md) | ตอบครบ 3 คำถาม: บรรทัดที่หลุดและความเสี่ยง, ทำไม 100% ถึงยังไม่ได้แปลว่า Test ดี (ยกตัวอย่างจากโค้ดจริง), และการจัดลำดับความสำคัญของ Test 3 ข้อแรก |
+| 4 | **วิเคราะห์ Code Smells** | [smells.md](file:///c:/Users/next5/Desktop/LAB4/smells.md) | วิเคราะห์การทำงานทีละขั้นและระบุ 6 กลิ่นโค้ดใน `pricing_legacy.py` (Global mutable state, Primitive obsession, Magic numbers, God function/SRP, Non-idiomatic comparison) |
+| 5 | **Characterization Test** | [tests/test_pricing_legacy.py](file:///c:/Users/next5/Desktop/LAB4/tests/test_pricing_legacy.py) | ชุดทดสอบ 19 ข้อ บันทึกพฤติกรรมจริงของโมดูลคิดราคาเดิม ครอบคลุมราคาปกติ, ซื้อจำนวนมาก (เกณฑ์ 49, 50, 99, 100), จำนวน 0, สมาชิกและแต้มสะสม, คูปองทุกแบบ และ State side-effects พร้อม Fixture ล้างค่า |
+| 6 | **Refactor โครงสร้างโมดูล Pricing** | [pricing.py](file:///c:/Users/next5/Desktop/LAB4/pricing.py)<br>[tests/test_pricing.py](file:///c:/Users/next5/Desktop/LAB4/tests/test_pricing.py) | ปรับปรุงโครงสร้างใหม่ให้อ่านง่าย แยกฟังก์ชันตามหลัก SRP ใช้ Data Class และค่าคงที่ชัดเจน โดยรักษาความเข้ากันได้ 100% และผ่าน Test ชุดเดิมครบทุกข้อ |
+| 7 | **การตั้งค่า Ruff Linter** | [pyproject.toml](file:///c:/Users/next5/Desktop/LAB4/pyproject.toml) | กำหนด `line-length = 100`, กฎ `E, F, I, UP`, exclude โฟลเดอร์ Lab 4 และ `pricing_legacy.py` รันผ่าน 0 errors |
+| 8 | **GitHub Actions CI Workflow** | [.github/workflows/ci.yml](file:///c:/Users/next5/Desktop/LAB4/.github/workflows/ci.yml) | Pipeline อัตโนมัติ: ดึงโค้ด, ติดตั้ง Python 3.11, ติดตั้ง requirements, ตรวจสอบ Ruff, และรัน Pytest พร้อมเกณฑ์ Coverage ขั้นต่ำ `--cov-fail-under=85` |
+| 9 | **ภาพถ่ายยืนยัน CI Checks** | [screenshots/ci-green.png](file:///c:/Users/next5/Desktop/LAB4/screenshots/ci-green.png)<br>[screenshots/ci-red.png](file:///c:/Users/next5/Desktop/LAB4/screenshots/ci-red.png) | ภาพหน้าจอการทำงานของ GitHub Actions CI: ภาพผ่านสีเขียว (Green Check) และภาพจงใจล้มเหลวสีแดง (Red Check) จาก Log |
+| 10 | **การวิเคราะห์มิติด้านจริยธรรม** | [ethics.md](file:///c:/Users/next5/Desktop/LAB4/ethics.md) | ตอบ 4 ประเด็นจริยธรรม (ความรับผิดชอบ, ลิขสิทธิ์โค้ด, PDPA ข้อมูลสมาชิก, ความเป็นธรรมของ AI) พร้อมแนวปฏิบัติส่วนบุคคล 150-250 คำ |
 
 ---
 
-## 🚀 วิธีการทดสอบรัน Test Suite
-
-เปิด Terminal และรันคำสั่งต่อไปนี้:
+## 🧪 การทดสอบระบบในเครื่อง (Local Testing)
 
 ```bash
-cd lab04-ai-coding-ux
-python -m pytest tests/test_discount.py -v
+# ติดตั้ง dependencies
+pip install -r requirements.txt
+
+# ตรวจสอบมาตรฐานโค้ดด้วย Ruff
+ruff check .
+
+# รันชุดทดสอบทั้งหมด 60 ข้อ พร้อมวัด Code Coverage
+pytest tests/ --cov=. --cov-report=term-missing --cov-fail-under=85
 ```
 
 ผลการทดสอบ:
 ```text
-tests/test_discount.py::test_apply_discount_basic PASSED                 [ 16%]
-tests/test_discount.py::test_apply_discount_zero PASSED                  [ 33%]
-tests/test_discount.py::test_bulk_total PASSED                           [ 50%]
-tests/test_discount.py::test_average_price PASSED                        [ 66%]
-tests/test_discount.py::test_average_price_empty PASSED                  [ 83%]
-tests/test_discount.py::test_cheapest_n PASSED                           [100%]
+tests/test_inventory.py ..................                               [ 30%]
+tests/test_pricing.py .......................                            [ 68%]
+tests/test_pricing_legacy.py ...................                         [100%]
 
-============================== 6 passed in 0.03s ==============================
+Name                Stmts   Miss  Cover   Missing
+-------------------------------------------------
+inventory.py           40      0   100%
+pricing.py             76      2    97%   72, 90
+pricing_legacy.py      36      1    97%   46
+-------------------------------------------------
+TOTAL                 152      3    98%
+Required test coverage of 85% reached. Total coverage: 98.03%
+============================= 60 passed in 0.58s ==============================
 ```
+
+---
+
+## 📌 สรุปงานส่ง Lab 04: AI-Assisted Coding & UX
+งาน Lab 04 เดิมถูกจัดเก็บไว้อย่างสมบูรณ์ในโฟลเดอร์ `lab04-ai-coding-ux/` ประกอบด้วย:
+- Mockup & Persona: `assets/inventory-mockup.drawio`, `persona.md`, `findings-lab04.md`
+- Accessibility Review: `accessibility-review.md`
+- Code Review & Evidence-based Debugging: `code-review.md`, `debug-log.md`, `discount.py`
