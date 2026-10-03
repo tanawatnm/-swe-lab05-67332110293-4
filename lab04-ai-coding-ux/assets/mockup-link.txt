@@ -1,0 +1,16 @@
+# UI Mockup Link & File Reference - Lab 04
+
+ไฟล์ Mockup ออกแบบด้วย draw.io สำหรับ 2 หน้าจอหลัก (Dashboard และ Add Product) บันทึกไว้ในโฟลเดอร์นี้:
+inventory-mockup.drawio
+
+วิธีเปิดดูไฟล์ Mockup:
+1. เปิดเว็บไซต์ https://app.diagrams.net/ (หรือเปิดด้วย Extension "Draw.io Integration" ใน VS Code)
+2. เลือก "Open Existing Diagram"
+3. เลือกไฟล์ assets/inventory-mockup.drawio ใน repository นี้
+4. รองรับการดูแบบ Full Interactive Diagram พร้อมตรวจสอบชุดสี WCAG AA และโครงสร้าง Layout
+
+ชุดสีที่ใช้ตามเกณฑ์ WCAG AA:
+- Primary Color: #1E40AF (ปุ่มหลัก และ Header นำทาง)
+- Success Color: #15803D (ข้อความบันทึกสำเร็จ และสถานะพร้อมดาวน์โหลด)
+- Warning Color: #B45309 (การ์ดแจ้งเตือนสต็อกต่ำใกล้หมด <= 5 ชิ้น)
+- Text Color: #111827 (ข้อความหลักบนพื้นขาว Contrast 16:1)
