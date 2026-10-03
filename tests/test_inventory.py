@@ -4,6 +4,7 @@ Following TDD practices for Lab 05.
 """
 
 import pytest
+
 from inventory import Inventory
 
 

@@ -10,8 +10,8 @@
 from __future__ import annotations
 
 import datetime
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Sequence
 
 # --- ค่าคงที่ระบบ (System Constants) ---
 DEFAULT_TAX_RATE = 0.07
