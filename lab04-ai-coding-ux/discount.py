@@ -1,15 +1,13 @@
-# discount.py  -- โมดูลคิดส่วนลดและสรุปยอด (มี bug จงใจ)
+# discount.py  -- โมดูลคิดส่วนลดและสรุปยอด
 
 def apply_discount(price: float, percent: float) -> float:
     """ลดราคาตาม percent (0-100) คืนราคาหลังลด"""
-    return price - percent / 100
+    return price * (1 - percent / 100)
 
 
 def bulk_total(prices: list, discount_percent: float) -> float:
     """รวมราคาหลายรายการแล้วลดส่วนลดรวมทีเดียว"""
-    total = 0
-    for p in prices:
-        total += p
+    total = sum(prices)
     return apply_discount(total, discount_percent)
 
 
